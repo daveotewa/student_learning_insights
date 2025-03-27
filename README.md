@@ -87,4 +87,4 @@ Welcome to the **Personalized Learning Dataset Analysis Project**! This project 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/personalized-learning-analysis.git
+   git clone https://github.com/daveotewa/student_learning_insights.git
