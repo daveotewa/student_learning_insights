@@ -55,6 +55,9 @@ Welcome to the **Personalized Learning Dataset Analysis Project**! This project 
 
 ## 📈 Visualizations (Power BI Dashboard)
 
+![image](https://github.com/user-attachments/assets/1d9d3c7b-0081-4c9b-9da5-3b59dbf0d6f5)
+
+
 ### KPI Cards:
 - Total Students
 - Dropout Students
