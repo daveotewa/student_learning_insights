@@ -1,93 +1,89 @@
+# 🛒 Ecommerce BI Dashboard Project
 
-# 📚 Personalized Learning Dataset Analysis
-
-Welcome to the **Personalized Learning Dataset Analysis Project**! This project explores a synthetic dataset representing student engagement, learning styles, and performance outcomes to gain insights and predict dropout risks.
-
----
-
-## 📂 Dataset Overview
-
-- **Records**: 10,000 students  
-- **Fields**: 15 columns  
-- **File**: `personalized_learning_dataset.csv`
-
-### 📋 Key Features
-
-| Column                      | Description                                       |
-|-----------------------------|---------------------------------------------------|
-| Student_ID                  | Unique identifier for each student               |
-| Age                         | Age of the student                               |
-| Gender                      | Gender (Male/Female/Other)                       |
-| Education_Level             | High School / Undergraduate / Postgraduate       |
-| Course_Name                 | Course enrolled (e.g., Data Science, ML)         |
-| Time_Spent_on_Videos        | Time spent on videos (minutes)                   |
-| Quiz_Attempts               | Number of quiz attempts                          |
-| Quiz_Scores                 | Average quiz score (%)                           |
-| Forum_Participation         | Number of forum participations                   |
-| Assignment_Completion_Rate  | Assignment completion percentage (%)             |
-| Engagement_Level            | Low / Medium / High                              |
-| Final_Exam_Score            | Final exam score (%)                             |
-| Learning_Style              | Visual / Auditory / Reading/Writing / Kinesthetic |
-| Feedback_Score              | Student feedback (1 to 5 scale)                  |
-| Dropout_Likelihood          | Yes / No (Likely to drop out)                    |
+This project is a full-stack **Business Intelligence** solution for an e-commerce platform. It showcases how to collect, transform, analyze, and visualize data using SQL, Python, and Power BI.
 
 ---
 
-## 🎯 Objectives
+## 📦 Project Components
 
-- Explore the relationship between learning behaviors and student success.
-- Identify factors contributing to dropout likelihood.
-- Provide actionable insights for personalized learning programs.
-
----
-
-## 🔎 Key Insights
-
-- **Gender Distribution**: Female (48.9%), Male (47%), Other (4.1%)  
-- **Education Level**: Undergraduate (50.7%) leads in enrollment  
-- **Learning Styles**: Reading/Writing (25.5%), Visual (25.2%), Auditory (24.8%), Kinesthetic (24.4%)  
-- **Engagement Levels**: Medium (49.3%), High (29.8%), Low (20.9%)  
-- **Dropout Likelihood**: 19.6% of students are likely to drop out  
-- **Performance**: Average Final Exam Score is 64.7%, with higher dropout rates linked to low assignment completion and low engagement  
-- **Top Courses**: Machine Learning (20.4%), Cybersecurity (20.3%), Python Basics (19.9%)
+| Tool         | Purpose                           |
+|--------------|-----------------------------------|
+| PostgreSQL   | Data storage & SQL transformations |
+| Python       | ETL pipeline (load/clean CSVs)    |
+| Power BI     | Interactive dashboards & reports  |
+| Excel/CSV    | Source data files                 |
 
 ---
 
-## 📈 Visualizations (Power BI Dashboard)
+## 📁 Dataset Overview
 
-![image](https://github.com/user-attachments/assets/1d9d3c7b-0081-4c9b-9da5-3b59dbf0d6f5)
+We worked with 4 key tables, each with >1,000 rows:
 
+- `customers`
+- `orders`
+- `payments`
+- `products`
 
-### KPI Cards:
-- Total Students
-- Dropout Students
-- Dropout Rate (%)
-- Average Final Exam Score
-
-### Charts:
-- Bar Chart: Dropout by Education Level
-- Donut Chart: Learning Styles Distribution
-- Line Chart: Age vs Final Exam Score
-- Scatter Plot: Quiz Attempts vs Final Exam Score (Bubble Size = Assignment Completion Rate)
-
-### Filters (Slicers):
-- Gender
-- Engagement Level
-- Course Name
-- Learning Style
+Optional: An `order_items` table can be used for product-level analysis.
 
 ---
 
-## 🛠️ Tools Used
+## ⚙️ ETL Workflow (Python)
 
-- **Power BI Desktop** – For dashboard creation  
-- **DAX** – To build KPIs and calculated measures  
-- **Python (Pandas)** – For optional data exploration and preprocessing
+Python scripts were used to:
+
+1. Load CSVs into PostgreSQL
+2. Create clean schema and tables
+3. Build materialized summary tables:
+   - `monthly_revenue_summary`
+   - `revenue_by_method`
+   - `top_customers`
+
+All SQL scripts are located in the `/sql/` directory.
 
 ---
 
-## 🚀 How to Use This Project
+## 📊 Dashboards (Power BI)
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/daveotewa/student_learning_insights.git
+### 1. 📆 Monthly Revenue
+
+- Measures: `total_orders`, `total_revenue`
+- Aggregated by month
+- Filterable by status
+
+### 2. 💳 Revenue by Payment Method
+
+- Visual: Bar chart
+- Fields: `method`, `total_revenue`
+- Features: consistent color scheme, tooltips, filters
+
+### 3. 👤 Top Customers
+
+- Visual: Top N bar chart
+- Metric: total amount spent
+- Sort: descending by revenue
+
+---
+
+## 📌 How to Use
+
+1. Clone this repo
+2. Set up PostgreSQL and run the scripts in `/sql/`
+3. Open Power BI and connect to the PostgreSQL database
+4. Explore the dashboards!
+
+---
+
+## ✅ Future Improvements
+
+- Add `order_items` table for product-level insights
+- Add calculated fields (e.g. AOV, CLV)
+- Publish dashboards to Power BI Service
+
+---
+
+## 🧠 Author
+
+**Anita Musyoka**  
+BI/Analytics Enthusiast | Nutrition & Public Health  
+[LinkedIn](#) | [Portfolio](#)  
