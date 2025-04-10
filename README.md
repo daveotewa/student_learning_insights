@@ -84,6 +84,6 @@ All SQL scripts are located in the `/sql/` directory.
 
 ## 🧠 Author
 
-**Anita Musyoka**  
-BI/Analytics Enthusiast | Nutrition & Public Health  
-[LinkedIn](#) | [Portfolio](#)  
+**David Otewa**  
+Data Analyts
+
